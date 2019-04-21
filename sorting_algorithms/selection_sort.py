@@ -19,4 +19,3 @@ def selection_sort(elements: List[Union[float, int]]) -> List[Union[float, int]]
         elements_copy[i] = smallest_number
 
     return elements_copy
-
