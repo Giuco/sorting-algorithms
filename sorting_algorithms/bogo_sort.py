@@ -1,12 +1,10 @@
-from random import shuffle
-from typing import List, Union
 from copy import deepcopy
+from numbers import Number
+from random import shuffle
+from typing import List
 
-Numeric = Union[int, float]
-Vector = List[Numeric]
 
-
-def bogo_sort(elements: Vector) -> Vector:
+def bogo_sort(elements: List[Number]) -> List[Number]:
     elements_copy = deepcopy(elements)
     is_sorted = False
 

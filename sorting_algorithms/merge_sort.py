@@ -1,13 +1,14 @@
+from numbers import Number
 from typing import List, Tuple
 
 
-def split(elements: List[float]) -> Tuple[List[float], List[float]]:
+def split(elements: List[Number]) -> Tuple[List[Number], List[Number]]:
     middle_index = len(elements) // 2
 
     return elements[:middle_index], elements[middle_index:]
 
 
-def merge(left: List[float], right: List[float]) -> List[float]:
+def merge(left: List[Number], right: List[Number]) -> List[Number]:
     sorted_elements = list()
 
     while left or right:
@@ -25,7 +26,7 @@ def merge(left: List[float], right: List[float]) -> List[float]:
     return sorted_elements
 
 
-def merge_sort(elements: List[float]) -> List[float]:
+def merge_sort(elements: List[Number]) -> List[Number]:
     if len(elements) <= 1:
         return elements
 

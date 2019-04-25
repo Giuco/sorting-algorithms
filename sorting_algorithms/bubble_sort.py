@@ -1,8 +1,9 @@
-from typing import List
 from copy import deepcopy
+from numbers import Number
+from typing import List
 
 
-def bubble_sort(elements: List[float]) -> List[float]:
+def bubble_sort(elements: List[Number]) -> List[Number]:
     elements_copy = deepcopy(elements)
     is_sorted = False
 

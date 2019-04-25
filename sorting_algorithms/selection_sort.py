@@ -1,8 +1,9 @@
-from typing import List, Union
 from copy import deepcopy
+from numbers import Number
+from typing import List
 
 
-def selection_sort(elements: List[Union[float, int]]) -> List[Union[float, int]]:
+def selection_sort(elements: List[Number]) -> List[Number]:
 
     elements_copy = deepcopy(elements)
 
