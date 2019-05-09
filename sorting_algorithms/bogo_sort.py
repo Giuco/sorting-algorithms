@@ -4,20 +4,21 @@ from random import shuffle
 from typing import List
 
 
+def is_sorted(elements: List[Number]) -> bool:
+    for i in range(1, len(elements)):
+        previous = elements[i - 1]
+        current = elements[i]
+
+        if previous > current:
+            return False
+
+    return True
+
+
 def bogo_sort(elements: List[Number]) -> List[Number]:
     elements_copy = deepcopy(elements)
-    is_sorted = False
 
-    while not is_sorted:
-        is_sorted = True
-
-        for i in range(1, len(elements_copy)):
-            previous = elements_copy[i - 1]
-            current = elements_copy[i]
-
-            if previous > current:
-                is_sorted = False
-                shuffle(elements_copy)
-                break
+    while not is_sorted(elements_copy):
+        shuffle(elements_copy)
 
     return elements_copy
