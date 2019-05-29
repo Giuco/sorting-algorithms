@@ -1,29 +1,29 @@
 from random import randint, random
 
-from sorting_algorithms import bogo_sort
+from sorting_algorithms import heap_sort
 
-NUMBER_OF_TESTS = 10
-ARRAY_MAX_LEN = 10
-MAX_INT_ARRAY = 10
+NUMBER_OF_TESTS = 500
+ARRAY_MAX_LEN = 1000
+MAX_INT_ARRAY = 10000
 
 
-def test_bogo_sort_integer():
+def test_heap_sort_integer():
     for _ in range(NUMBER_OF_TESTS):
         array_size = randint(0, ARRAY_MAX_LEN)
         array = [randint(-MAX_INT_ARRAY, MAX_INT_ARRAY) for _ in range(array_size)]
 
-        assert bogo_sort(array) == sorted(array)
+        assert heap_sort(array) == sorted(array, reverse=True)
 
 
-def test_bogo_sort_float():
+def test_heap_sort_float():
     for _ in range(NUMBER_OF_TESTS):
         array_size = randint(0, ARRAY_MAX_LEN)
         array = [randint(-MAX_INT_ARRAY, MAX_INT_ARRAY) - random() for _ in range(array_size)]
 
-        assert bogo_sort(array) == sorted(array)
+        assert heap_sort(array) == sorted(array, reverse=True)
 
 
-def test_bogo_sort_float_int_mixed():
+def test_heap_sort_float_int_mixed():
     for _ in range(NUMBER_OF_TESTS):
         array_size = randint(0, ARRAY_MAX_LEN)
         array = [
@@ -32,4 +32,4 @@ def test_bogo_sort_float_int_mixed():
             for _ in range(array_size)
         ]
 
-        assert bogo_sort(array) == sorted(array)
+        assert heap_sort(array) == sorted(array, reverse=True)
