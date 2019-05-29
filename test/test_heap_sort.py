@@ -12,7 +12,7 @@ def test_heap_sort_integer():
         array_size = randint(0, ARRAY_MAX_LEN)
         array = [randint(-MAX_INT_ARRAY, MAX_INT_ARRAY) for _ in range(array_size)]
 
-        assert heap_sort(array) == sorted(array)
+        assert heap_sort(array) == sorted(array, reverse=True)
 
 
 def test_heap_sort_float():
@@ -20,7 +20,7 @@ def test_heap_sort_float():
         array_size = randint(0, ARRAY_MAX_LEN)
         array = [randint(-MAX_INT_ARRAY, MAX_INT_ARRAY) - random() for _ in range(array_size)]
 
-        assert heap_sort(array) == sorted(array)
+        assert heap_sort(array) == sorted(array, reverse=True)
 
 
 def test_heap_sort_float_int_mixed():
@@ -32,4 +32,4 @@ def test_heap_sort_float_int_mixed():
             for _ in range(array_size)
         ]
 
-        assert heap_sort(array) == sorted(array)
+        assert heap_sort(array) == sorted(array, reverse=True)
